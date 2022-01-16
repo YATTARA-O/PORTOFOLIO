@@ -1,0 +1,181 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --primary-color: #047ead;
+  --secondary-color: yellowgreen;
+  --my-color: grey;
+  --your-color: green;
+  --header-color: white;
+}
+body {
+  font-family: roboto, sans-serif;
+  color: var(--primary-color);
+  background: url(images/PORTO6.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+}
+
+/* Navigation */
+
+nav {
+  position: absolute;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  /* au dessus de home */
+  z-index: 10;
+  background: #333;
+}
+nav a {
+  color: white;
+  font-size: 18px;
+  margin: 0 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+  border-radius: 10px;
+  left: 250px;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: #4e6681;
+}
+
+nav a:hover::after {
+  background: #fff;
+}
+
+.home {
+  height: 100vh;
+  padding: 0 60px;
+  position: relative;
+}
+.home h1 {
+  font-family: Montserrat, sans-serif;
+  padding-top: 150px;
+  font-size: clamp(10px, 5vw,50px);
+  text-transform: uppercase;
+  color: rgb(32, 187, 110);
+  font-weight: 700;
+  text-align: center;
+}
+.home .subtitle {
+  font-family: roboto, sans-serif;
+  font-size: clamp(20px, 7vw, 60px);
+  text-transform: uppercase;
+  color: rgb(32, 187, 110);
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-align: center;
+  padding-top: 30px;
+}
+.stream-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 250px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  color: #f1f1f1;
+  text-decoration: none;
+  background: gold;
+  color: #333;
+  padding: 15px 15px;
+  border-radius: 3px;
+  margin-top: 20px;
+}
+.stream-link:hover {
+  box-shadow: 0 5px 15px rgba(255, 2552, 255, 0.2);
+}
+.stream-link img {
+  width: 80px;
+  height: 70px;
+}
+
+.floating-btn {
+  position: absolute;
+  bottom: 5%;
+  left: 85%;
+  transform: translateX(-50%);
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  border: 2px solid #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 white;
+  animation: pulse 1.3s infinite;
+  background: white;
+  padding: 30px;
+}
+.floating-btn a {
+  color: #333;
+  font-weight: bolder;
+}
+
+@keyframes pulse {
+  to {
+    box-shadow: 0 0 0 1rem rgba(255, 255, 255, 0.01);
+  }
+}
+.floating-btn img {
+  width: 40px;
+  height:40px;
+}
+
+@media screen and (max-width: 650px) {
+  .home {
+    height: 60vh;
+    padding: 0 25px;
+  }
+  .home h1 {
+    padding-top: 100px;
+  }
+  .subtitle {
+      margin-top: 5px;
+  }
+  nav a {
+    font-size: 18px;
+  }
+  .stream-link {
+    max-width: 145px;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+  .stream-link img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+  }
+  .floating-btn img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .home {
+    padding: 0 10px;
+  }
+}
